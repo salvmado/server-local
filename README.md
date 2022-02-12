@@ -18,7 +18,7 @@ Creo una nueva máquina con estas características:
 - Memoria RAM: 1024MB
 - Disco duro virtual 8GB (VDI)
 
-Configuro dos adaptadores de red, lo que entiendo es que uno me servirá para conectarme a internet y el otro para entrar con ssh y poder ver mis direcciones IP (hosts virtuales) en el navegador del anfitrión.
+Configuro dos adaptadores de red, lo que entiendo es que uno me servirá para conectarme a internet y el otro para entrar con `ssh` y poder ver mis direcciones IP (hosts virtuales) en el navegador del anfitrión.
 - Red -> Adaptador 1
     - Conectado a: NAT
 - Red -> Adaptador 2
@@ -46,7 +46,7 @@ ip a
 ```
 Me aparece que tengo la red `lo` que corresponde a localhost, `enp0s3` ésta es la que configuré como NAT y es la que está conectada a internet y por último la `enp0s8` es la que configuré como Adaptador solo anfitrión y se encuentra desactivada. 
 
-Tendré que editar este archivo como root  `/etc/network/interfaces` para agregarle una dirección IP y poder conectarme con ssh.
+Tendré que editar este archivo como root  `/etc/network/interfaces` para agregarle una dirección IP y poder conectarme con `ssh`.
 Con mi editor, entro al archivo y pongo estas líneas 
 ```sh
 # Interfaz secundaria host-only
@@ -64,7 +64,7 @@ Reviso nuevamente mis interfaces de res con
 ```sh
 ip a
 ```
-Y veo que `enps08` ya tiene asignada la IP. Con esto ya me puedo conectar desde Windows al server, por medio de ssh con mi terminal wsl de Windows. Para conectarme lo hago así:
+Y veo que `enps08` ya tiene asignada la IP. Con esto ya me puedo conectar desde Windows al server, por medio de `ssh` con mi terminal wsl de Windows. Para conectarme lo hago así:
 ```sh
 ssh jose@192.168.100.100
 y pongo el password
